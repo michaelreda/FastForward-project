@@ -1,0 +1,62 @@
+<ion-view title="Login" hide-nav-bar="true" hide-back-button="true" id="page1">
+  <ion-content padding="true" class="manual-ios-statusbar-padding">
+    <div>
+      <img src="img/gbbDdwy2TFiuikGOZv58_logo.png" style="display: block; width: 70%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+    <div id="login-container1">
+      <form id="login-form1" class="list">
+        <label class="item item-input item-stacked-label" id="login-input1" name="username">
+          <span class="input-label">Username : </span>
+          <input type="text" placeholder="your username">
+        </label>
+        <label class="item item-input item-stacked-label" id="login-input2" name="username">
+          <span class="input-label">Password : </span>
+          <input type="password" placeholder="your password">
+        </label>
+        <div id="login-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">
+          <p style="color:#000000;">Forgot password?
+            <strong>Tap here</strong>
+          </p>
+        </div>
+        <a ui-sref="careers()" id="login-button3" style="border-radius:105px 105px 105px 105px;" class="button button-positive button-block">Login</a>
+      </form>
+    </div>
+    <div>
+      <div class="header-container">
+        <h6>OR</h6>
+      </div>
+      <style>
+        h6 {
+      display: inline-block;
+      padding: 0 15px;
+      position: relative;
+    }
+    
+    h6:before,
+    h6:after {
+      background: #ddd;
+      content: "";
+      display: block;
+      height: 1px;
+      position: absolute;
+        top: 50%;
+      width: 400%;
+    }
+    h6:before {
+      right: 100%;
+    }
+    h6:after {
+      left: 100%;
+    }
+    .header-container {
+      overflow: hidden;
+      text-align: center;
+    }
+      </style>
+    </div>
+    <div id="login-button-bar1" class="button-bar">
+      <button id="login-button8" class="button button-assertive button-block button-outline icon ion-social-facebook"></button>
+      <button id="login-button9" class="button button-assertive button-block button-outline icon ion-social-googleplus"></button>
+    </div>
+  </ion-content>
+</ion-view>
