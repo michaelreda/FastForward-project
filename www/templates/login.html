@@ -3,22 +3,26 @@
     <div>
       <img src="img/gbbDdwy2TFiuikGOZv58_logo.png" style="display: block; width: 70%; height: auto; margin-left: auto; margin-right: auto;">
     </div>
+<div>
+	<span ng-if="loginFailed" class="assertive">wrong username or password !<span>
+</div>
     <div id="login-container1">
       <form id="login-form1" class="list">
         <label class="item item-input item-stacked-label" id="login-input1" name="username">
           <span class="input-label">Username : </span>
-          <input type="text" placeholder="your username">
+          <input type="text" ng-model="username" placeholder="your username">
         </label>
         <label class="item item-input item-stacked-label" id="login-input2" name="username">
           <span class="input-label">Password : </span>
-          <input type="password" placeholder="your password">
+          <input type="password" ng-model="password" placeholder="your password">
         </label>
         <div id="login-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">
           <p style="color:#000000;">Forgot password?
-            <strong>Tap here</strong>
+            <strong class="assertive">Tap here</strong>
           </p>
         </div>
-        <a ui-sref="careers()" id="login-button3" style="border-radius:105px 105px 105px 105px;" class="button button-positive button-block">Login</a>
+        <!--<a ui-sref="careers()" id="login-button3" style="border-radius:105px 105px 105px 105px;" class="button button-assertive button-block">Login</a>-->
+	<a ng-click="login(username,password)" id="login-button3" style="border-radius:105px 105px 105px 105px;" class="button button-assertive button-block">Login</a>
       </form>
     </div>
     <div>
@@ -55,8 +59,8 @@
       </style>
     </div>
     <div id="login-button-bar1" class="button-bar">
-      <button id="login-button8" class="button button-assertive button-block button-outline icon ion-social-facebook"></button>
-      <button id="login-button9" class="button button-assertive button-block button-outline icon ion-social-googleplus"></button>
+      <button id="login-button8" class="button button-assertive button-block button-outline"><span class="icon ion-social-facebook positive"></span></button>
+      <button id="login-button9" class="button button-assertive button-block button-outline"><span class="icon ion-social-googleplus"></span></button>
     </div>
   </ion-content>
 </ion-view>

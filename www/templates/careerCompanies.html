@@ -1,38 +1,49 @@
 <ion-view title="CareerCompanies" hide-nav-bar="true" hide-back-button="true" id="page6">
-  <ion-content padding="true" class="manual-ios-statusbar-padding">
-    <div id="careerCompanies-container12">
-      <div id="careerCompanies-button-bar6" class="button-bar">
-        <a ui-sref="careers()" id="careerCompanies-button10" class="button button-assertive button-block button-outline icon ion-man"></a>
-        <a ui-sref="universitiesCareers()" id="careerCompanies-button11" class="button button-stable button-block button-outline icon ion-university"></a>
-      </div>
-      <div id="careerCompanies-container11">
-        <button id="careerCompanies-button13" class="button button-assertive button-clear icon ion-android-laptop"></button>
-        <a ui-sref="companiesFilters()" id="careerCompanies-button12" class="button button-stable button-clear icon ion-android-options"></a>
-      </div>
-    </div>
-    <div id="careerCompanies-container13">
-      <ion-list id="careerCompanies-list3">
-        <ion-item id="careerCompanies-list-item10">Big Data Company
-          <span class="item-note">75 EGP</span>
-          <ion-option-button class="button-balanced">Check mark symbol</ion-option-button>
-        </ion-item>
-        <ion-item id="careerCompanies-list-item11">Embedded Systems Company
-          <span class="item-note">50 EGP</span>
-          <ion-option-button class="button-balanced">Check mark symbol</ion-option-button>
-        </ion-item>
-        <ion-item id="careerCompanies-list-item15">Cloud-Based SME
-          <span class="item-note">0 EGP</span>
-          <ion-option-button class="button-balanced">Check mark symbol</ion-option-button>
-        </ion-item>
-        <ion-item id="careerCompanies-list-item16">Security Company
-          <span class="item-note">100 EGP</span>
-          <ion-option-button class="button-balanced">Check mark symbol</ion-option-button>
-        </ion-item>
-        <ion-item id="careerCompanies-list-item17">IOS development INC.
-          <span class="item-note">100 EGP</span>
-          <ion-option-button class="button-balanced">Check mark symbol</ion-option-button>
-        </ion-item>
-      </ion-list>
-    </div>
-  </ion-content>
+	<ion-content padding="true" class="manual-ios-statusbar-padding">
+		<div id="careerCompanies-container12">
+			<div id="careerCompanies-button-bar6" class="button-bar">
+				<a ui-sref="careers()" id="careerCompanies-button10" class="button button-assertive button-block button-outline icon ion-man"></a>
+				<a ui-sref="universitiesCareers()" id="careerCompanies-button11" class="button button-stable button-block button-outline icon ion-university"></a>
+			</div>
+			<div id="careerCompanies-container11">
+				<!-- <center style="width: 90%;display: -webkit-inline-box;margin-left: 71px;">
+		<button id="careerCompanies-button13" class="button button-assertive button-clear icon ion-android-laptop"></button>
+	</center> -->
+				<!-- <a ui-sref="companiesFilters()" id="careerCompanies-button12" style="float:right" class="button button-stable button-clear icon ion-android-options"></a> -->
+
+			</div>
+		</div>
+		<a ui-sref="companiesFilters()" id="careerCompanies-button12" style="float:right" class="button button-stable button-clear icon ion-android-options"></a>
+		<br><br><br>
+		<div id="careerCompanies-container13">
+			<ion-list id="careerCompanies-list3">
+				<ion-item id="careerCompanies-list-item10" ng-repeat="company in companies"
+				ng-if="(!small_medium && !corporate && !max_price) ||(
+							 (small_medium==true && company.size=='small/medium')||
+							 (corporate==true && company.size=='corporate')||
+							 (classification.indexOf(company.type)>-1 )||
+							 (max_price!=undefined && company.price<=max_price))" style="margin: 0px;border-left-color: #ef473a;">
+<div class="row">
+		<span style="font-weight: 700">{{company.name}}</span>
+					<span class="item-note assertive" style="right: 10px;position: absolute;font-weight: 700">{{company.price}} EGP</span>
+</div>
+<div class="row">
+		<span class="item-date" style="font-size: small;">{{company.date}}</span>
+		<span class="item-status" style="right: 10px;position: absolute;font-size: small;">{{company.status}}</span>
+</div>
+		<ion-option-button class="button-energized" style="font-size: xx-large;">ℹ</ion-option-button>
+					<ion-option-button class="button-balanced" style="font-size: xx-large;">✓</ion-option-button>
+				</ion-item>
+<style>
+.item .item-content {
+	color: #ef473a; !important;
+	text-transform: uppercase;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+</style>
+
+			</ion-list>
+		</div>
+	</ion-content>
 </ion-view>

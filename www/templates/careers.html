@@ -1,17 +1,41 @@
 <ion-view title="Careers" hide-nav-bar="true" hide-back-button="true" id="page2">
-  <ion-nav-buttons side="left">
-    <button class="button button-icon icon No Icon"></button>
-  </ion-nav-buttons>
-  <ion-content padding="true" class="manual-ios-statusbar-padding">
-    <div id="careers-container3">
-      <div id="careers-button-bar3" class="button-bar">
-        <button id="careers-button20" class="button button-assertive button-block button-outline icon ion-man"></button>
-        <a ui-sref="universitiesCareers()" id="careers-button21" class="button button-stable button-block button-outline icon ion-university"></a>
-      </div>
-    </div>
-    <div id="careers-container8">
-      <a ui-sref="careerCompanies()" id="careers-button29" class="button button-assertive button-large button-outline icon ion-laptop"></a>
-      <button id="careers-button27" class="button button-assertive button-large button-outline icon ion-android-add"></button>
-    </div>
-  </ion-content>
+	<ion-nav-buttons side="left">
+		<button class="button button-icon icon No Icon"></button>
+	</ion-nav-buttons>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<ion-content padding="true" class="manual-ios-statusbar-padding">
+		<div id="careers-container3">
+			<div id="careers-button-bar3" class="button-bar">
+				<button id="careers-button20" class="button button-assertive button-block button-outline icon ion-man"></button>
+				<a ui-sref="universitiesCareers()" id="careers-button21"  class="button button-stable button-block button-outline icon ion-university"></a>
+			</div>
+		</div>
+		<div id="careers-container8">
+			<center><a ui-sref="careerCompanies()" id="careers-button29"  class="button career-button button-dark button-large button-outline"><span class="career-icon assertive icon ion-laptop"></span>Software Engineering</a>
+			<a id="careers-button27" style="width:40%"  class="button career-button button-dark button-large button-outline"><span class="career-icon assertive fa fa-medkit"></span>Medicine</a></center>
+
+<center><a id="careers-button29" class="button career-button button-dark button-large button-outline"><span class="career-icon assertive fa fa-bullhorn"></span>Marketing</a>
+			<a id="careers-button27"  class="button career-button button-dark button-large button-outline"><span class="career-icon assertive fa fa-university"></span>Political Science</a></center>
+
+<center><a id="careers-button29"  class="button career-button button-dark button-large button-outline"><span class="career-icon assertive fa fa-thermometer-full"></span>Pharmacy</a>
+			<a id="careers-button27"  class="button career-button button-dark button-large button-outline"><span class="career-icon assertive fa fa-building"></span>Civil Engineering</a></center>
+		</div>
+<style>
+.career-button{
+	width:40%;
+	--height:33%!important;
+	padding-top: 3px;
+	height: 109px;
+	font-size: inherit;
+	line-height: normal;
+}
+.career-icon:before {
+		font-size: 60px !important;
+}
+.career-icon{
+display:block;
+padding-top: 5px;
+}
+</style>
+	</ion-content>
 </ion-view>

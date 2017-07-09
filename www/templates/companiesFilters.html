@@ -1,23 +1,68 @@
 <ion-view title="CompaniesFilters" hide-nav-bar="true" id="page5">
-  <ion-content padding="true" class="manual-ios-statusbar-padding">
-    <div id="companiesFilters-container10">
-      <form id="companiesFilters-form4" class="list">
-        <div id="companiesFilters-button-bar5" class="button-bar">
-          <button id="companiesFilters-button34" style="font-weight:lighter;text-align:justify;" class="button button-assertive button-block button-outline icon ion-man">small/medium</button>
-          <button id="companiesFilters-button35" style="font-weight:lighter;" class="button button-assertive button-block button-outline">corporate</button>
-        </div>
-        <label class="item item-input item-stacked-label" id="companiesFilters-input11" name="type">
-          <span class="input-label">Classification: </span>
-          <input type="text" placeholder="select some classifications">
-        </label>
-        <label class="item item-input item-stacked-label" id="companiesFilters-input9" name="major">
-          <span class="input-label">Date/Time: </span>
-          <input type="text" placeholder="select date or time">
-        </label>
-        <ion-item class="range range-assertive" id="companiesFilters-range2">Price Range
-          <input type="range" value="300000" min="0" max="300000" step="500" name="price_range">
-        </ion-item>
-      </form>
-    </div>
-  </ion-content>
+	<ion-content padding="true" class="manual-ios-statusbar-padding">
+		<div id="companiesFilters-container10">
+
+			<form id="companiesFilters-form4" class="list">
+				<div id="companiesFilters-button-bar5" class="button-bar">
+
+					<button id="companiesFilters-button34" style="font-weight:lighter;" class="button button-assertive button-block button-outline icon ion-man" ng-click="small_medium_click()">small/medium</button>
+					<button id="companiesFilters-button35" style="font-weight:lighter;" class="button button-assertive button-block button-outline" ng-click="corporate_click()">corporate</button>
+				</div>
+				<label class="item item-input item-stacked-label" id="companiesFilters-input11" name="type">
+					<span class="input-label">Classification: </span>
+					<!-- <input type="text" placeholder="select some classifications"> -->
+					<select ng-change="new_classification()"  ng-model="classification" multiple style="width:60%">
+						<option value="cloud">cloud</option>
+						<option value="mobile">mobile</option>
+						<option value="security">security</option>
+						<option value="embedded_systems">embedded systems</option>
+					</select>
+				</label>
+
+				<!-- <label class="item item-input item-stacked-label" id="companiesFilters-input9" name="major">
+					<span class="input-label">Date/Time: </span>
+					<input type="text" placeholder="select date or time">
+				</label> -->
+				<ion-item class="range range-assertive" id="companiesFilters-range2">Max Price {{max_price?max_price:'10000'}} :
+
+
+							<b> EGP 0</b> <input id="ex2" type="range" class="span2" ng-change="max_price_change(max_price)" ng-model="max_price" step="100" value="1000" min="0" max="200000" data-slider-step="5" /> <b>EGP 200000</b>
+
+
+
+		<!--<ion-range dualKnobs="true" [(ngModel)]="dualValue2" min="21" max="72" step="3" snaps="true"></ion-range>-->
+		<!-- <link rel="stylesheet" type="text/css" href="assets/nouislider.css">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="assets/nouislider.js"></script>
+		<p>
+	<label for="amount">Price range:</label>
+	<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+</p>
+
+<div id="slider-range"></div>
+					<input type="range"  value="300000" min="0" max="300000" step="500" name="price_range"> -->
+				</ion-item>
+			</form>
+
+		</div>
+
+	</ion-content>
 </ion-view>
+
+<script>
+	$( function() {
+		$( "#slider-range" ).slider({
+			range: true,
+			min: 0,
+			max: 500,
+			values: [ 75, 300 ],
+			slide: function( event, ui ) {
+				$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+			}
+		});
+		$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+			" - $" + $( "#slider-range" ).slider( "values", 1 ) );
+	} );
+	</script>
